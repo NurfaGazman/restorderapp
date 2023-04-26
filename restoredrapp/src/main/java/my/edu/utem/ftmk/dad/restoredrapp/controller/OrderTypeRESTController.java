@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import my.edu.utem.ftmk.dad.restoredrapp.model.OrderType;
 import my.edu.utem.ftmk.dad.restoredrapp.repository.OrderTypeRepository;
 
+
 @RestController
 @RequestMapping("/api/ordertypes")
 public class OrderTypeRESTController {
+	
 	@Autowired
 private OrderTypeRepository orderTypeRepository;
 	@GetMapping
@@ -28,6 +30,7 @@ private OrderTypeRepository orderTypeRepository;
 		return orderTypeRepository.findAll();
 		
 	}
+	
 	@GetMapping("{orderTypeId}")
 	public OrderType getOrderType(@PathVariable long orderTypeId) {
 		OrderType orderType = orderTypeRepository.findById(orderTypeId).get();
